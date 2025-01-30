@@ -39,7 +39,7 @@ const CreateRoom = () => {
       console.log(data);
 
       const response = await axios.post(
-        "http://localhost:8000/api/v1/room/add",
+        `${ROOM_API_END_POINT}/add`,
         data,
         {
           headers: { "Content-Type": "multipart/form-data" },
