@@ -15,7 +15,7 @@ import ManageBookings from './components/admin/ManageBookings'
 import RoomDetail from './components/ui/RoomDetail'
 import BookRooms from './components/ui/BookRooms'
 import Contact from './components/ui/Contact'
-import ManageQueries from './components/admin/manageQueries'
+import ManageQueries from './components/admin/ManageQueries'
 
 const appRouter = createBrowserRouter([
   {
