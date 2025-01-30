@@ -21,11 +21,13 @@ app.get("/home", (req,res)=> {
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
-const corsOptions = [
-{ origin: 'https://guest-house-frontend.vercel.app', credentials:true},
-{ origin: 'https://guest-house-frontend.vercel.app/', methods: ["POST", "GET", "PUT"] ,credentials:true},
-]
-app.use(cors(corsOptions))
+
+const corsOptions = {
+    origin: 'https://guest-house-frontend.vercel.app', 
+    credentials: true,
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 
  
