@@ -23,22 +23,23 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: (origin, callback) => {
-        const allowedOrigins = [
-            'http://localhost:5173',
-            'https://guest-house-react-aug.vercel.app',
-            'https://guest-house-react-qed6l8508-mohammad-anas-projects-290bb13b.vercel.app'
-        ];
+  origin: (origin, callback) => {
+    const allowedOrigins = ['http://localhost:5173'];
+      
+    const isAllowed =
+      !origin ||
+      allowedOrigins.includes(origin) ||
+      origin.endsWith('.vercel.app');
 
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 app.use(cors(corsOptions));
