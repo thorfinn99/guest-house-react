@@ -23,7 +23,10 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: ["https://guest-house-frontend.vercel.app"],
+    origin: [
+        "https://guest-house-react.vercel.app", 
+        "https://guest-house-react-aug.vercel.app",
+        "http://localhost:5173"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
