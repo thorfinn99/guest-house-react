@@ -9,7 +9,7 @@ import {Booking} from "../models/booking.model.js"
 export const addRoom = async (req, res) => {
     try {
         const { roomType, roomName, roomRent,  roomDescription } = req.body;
-        const roomImage = req.files.roomImage ? req.files.roomImage[0] : null; // Get room image
+        const roomImage = req.file; // Get room image
 
         if (!roomType || !roomImage || !roomName || !roomRent || !roomDescription ) {
             return res.status(400).json({
