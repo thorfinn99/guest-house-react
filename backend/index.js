@@ -29,7 +29,8 @@ const corsOptions = {
     const isAllowed =
       !origin ||
       allowedOrigins.includes(origin) ||
-      origin.endsWith('.vercel.app');
+      origin.endsWith('.vercel.app') ||
+      origin === 'https://guest-house-react.vercel.app';
 
     if (isAllowed) {
       callback(null, true);
