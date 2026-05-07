@@ -146,7 +146,7 @@ export const confirmBooking = async (req, res) => {
     }
 
     // Update the room availability for the confirmed dates
-    room.availability.forEach((availability) => {
+    (room.availability || []).forEach((availability) => {
       if (
         new Date(booking.checkInDate) >= new Date(availability.startDate) &&
         new Date(booking.checkOutDate) <= new Date(availability.endDate)
