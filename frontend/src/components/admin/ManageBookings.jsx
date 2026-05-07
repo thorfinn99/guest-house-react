@@ -8,7 +8,7 @@ import { GiConfirmed } from "react-icons/gi";
 import { MdCancel } from "react-icons/md";
 import { setLoading } from '@/redux/authSlice';
 import axios from 'axios';
-import { BOOKING_API_END_POINT } from '@/utils/constant';
+const BOOKING_API_END_POINT = import.meta.env.VITE_BOOKING_API_END_POINT;
 import { toast } from 'sonner';
 import Navbar from '../shared/Navbar';
 
@@ -125,9 +125,6 @@ const ManageBookings = () => {
                   <div>
                     <p><strong>Booked By:</strong> {booking.user?.email || 'N/A'}</p>
                     <p><strong>Phone:</strong> {booking.user?.phoneNumber || 'N/A'}</p>
-                  </div>
-                  <div>
-                    <DownloadLink url={booking.user?.aadhaar} />
                   </div>
                 </div>
                 <div className="text-gray-600 mb-4">
