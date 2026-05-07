@@ -3,6 +3,7 @@ import Navbar from "../shared/Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+const ROOM_API_END_POINT = import.meta.env.VITE_ROOM_API_END_POINT;
 
 const CreateRoom = () => {
   const navigate = useNavigate();
