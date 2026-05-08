@@ -41,19 +41,30 @@ const ManageBookings = () => {
     }
   };
 
-  const rejectBooking = async (bookingId) => {
-    setLoading(true);
-    try {
-      const res = await axios.post(`${BOOKING_API_END_POINT}/update/${bookingId}/status`, { status: 'cancelled' }, { withCredentials: true });
-      if (res.data.success) {
-        toast.success("Booking Cancelled");
-        window.location.reload();
+  const rejectBooking = async (bookingId, roomId) => {
+  setLoading(true);
+
+  try {
+    const res = await axios.post(
+      `${BOOKING_API_END_POINT}/update-status`,
+      {
+        bookingId,
+        roomId
+      },
+      {
+        withCredentials: true
       }
-    } catch (error) {
-      console.log(error);
-      toast.error(error.message);
+    );
+
+    if (res.data.success) {
+      toast.success("Booking Cancelled");
+      window.location.reload();
     }
-  };
+  } catch (error) {
+    console.log(error);
+    toast.error(error.message);
+  }
+};
 
   const DownloadLink = ({ url }) => {
     const downloadFile = () => {
@@ -110,7 +121,7 @@ const ManageBookings = () => {
                             <span>Confirm Booking</span>
                           </div>
                           <div
-                            onClick={() => rejectBooking(booking._id)}
+                            onClick={() => rejectBooking(booking._id, booking.room._id)}
                             className="flex items-center gap-2 text-red-600 hover:text-red-700 cursor-pointer"
                           >
                             <MdCancel />
