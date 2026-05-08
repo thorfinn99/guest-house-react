@@ -46,7 +46,7 @@ const ManageBookings = () => {
 
   try {
     const res = await axios.post(
-      `${BOOKING_API_END_POINT}/update-status`,
+      `${BOOKING_API_END_POINT}/cancelBooking`,
       {
         bookingId,
         roomId
