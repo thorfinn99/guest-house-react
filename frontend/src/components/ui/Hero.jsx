@@ -45,7 +45,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="absolute inset-0 flex justify-center items-center text-white text-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to <span className='text-yellow-400' >MJPRU</span> Guest House</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to <span className='text-yellow-400' >Stay</span> Ease</h1>
             <p className="text-xl md:text-2xl mb-6">Your comfort is our priority</p>
             <button onClick={goToRooms} className="px-6 py-3 bg-white text-gray-800 font-semibold rounded-md hover:bg-opacity-80 transition duration-300">
               Book Room
