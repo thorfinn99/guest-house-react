@@ -45,7 +45,7 @@ function Navbar() {
         <div>
           <Link to="/" >
             <h1 className="text-xl cursor-pointer md:text-3xl font-bold">
-              <p>MJPRU<span className="text-orange-500"> Guest House</span></p>
+              <p>Stay<span className="text-orange-500"> Ease</span></p>
             </h1>
           </Link>
         </div>
