@@ -12,7 +12,7 @@ const Footer = () => {
           <div class="mb-6 md:mb-0">
               <a href="https://flowbite.com/" class="flex items-center">
               <h1 className="text-2xl cursor-pointer md:text-3xl font-bold">
-            <p>MJPRU<span className="text-orange-500" >GUEST HOUSE</span></p>
+            <p>Stay<span className="text-orange-500" >Ease</span></p>
           </h1>
               </a>
           </div>
