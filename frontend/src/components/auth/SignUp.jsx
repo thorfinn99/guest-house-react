@@ -204,7 +204,7 @@ function SignUp() {
                       Owner
                     </label>
                   </div>
-                  //////////////////
+                
                 </div>
 
                 <div className="flex items-center gap-2">
